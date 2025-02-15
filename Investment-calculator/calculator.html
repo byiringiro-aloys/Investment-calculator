@@ -1,0 +1,58 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investment Calculator</title>
+    <link rel="stylesheet" href="./calculator.css">
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navigation">
+      <div class="logo-icon">
+        <a href="#"><img src="./image.png" alt="NGWINO">
+        <a href="#" id="header1"><b>NGWINO</b></a></a>
+      </div>
+      <div class="nav-button">
+        <button class="btn dashboard">Return to Dashboard</button>
+       </div>
+    </nav>
+
+    <!--main content area-->
+      <main class="body">
+      <div class="main">
+      <div class="container">
+        <h2>Investment Calculator</h2>
+        
+        <label for="investmentType">Investment Type:</label>
+        <select id="investmentType" onchange="updateRate()">
+          <option value="shares">Shares</option>
+          <option value="bonds">Bonds</option>
+        </select>
+
+        <label for="investAmount">Invest Amount:</label>
+        <input type="number" id="investAmount" placeholder="Enter amount" oninput="formatAmount()" />
+
+        <label for="investmentTenure">Investment Tenure (Months):</label>
+        <input type="number" id="investmentTenure" placeholder="Enter months" />
+
+        <label for="rate">Rate (%):</label>
+        <input type="text" id="rate" readonly />
+
+        <button onclick="calculateProfit()">Calculate Profit</button>
+      </div>
+      <div class="result">
+        <div class="content">
+        <h2>Overview of the Profit</h2>
+        <h3>Your monthly profit: <span id="monthlyProfit"><i>0</i></span></h3>
+        <h3>Total amount earned: <span id="totalEarned"><i>0</i></span></h3>
+        <h3>Balance: <span id="balance">0</span></h3>
+        <h3>Total interest earned: <span id="totalInterest"><i>0</i></span></h3>
+        </div>
+      </div>
+      </div>
+      </main>
+    <p id="p1"><b>&copy; 2025 Financial Hub. All Rights Reserved.</b></p>
+  <script src="./calculator.js"></script>
+  </body>
+  </html>
